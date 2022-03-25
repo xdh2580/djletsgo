@@ -1,0 +1,6 @@
+关于migrate的问题
+在model和数据库来回导来导去之后发现model和数据库中的表映射不一致了
+在model中定义的类不能migrate到mysql中了，提示No migrations to apply.
+这可能就是ORM操蛋的地方吧，删除migrations里的东西再进行migrate也不好使，总之就是model和mysql的表对应不上了。
+原来在数据库中还会有每一次migration的记录，需要把这些也删掉再进行migrate。参考如下
+https://blog.csdn.net/qq_25730711/article/details/60327344

@@ -1,0 +1,9 @@
+# 个人注：当需要把数据库中的表映射到django的model中要使用如下两条指令：
+# 生成模型文件命令
+# python3 manage.py inspectdb
+# #将模型导入APP
+# python3 manage.py inspectdb > app/models.py
+# 上述指令会将django默认数据库中所有的表全部映射到model.py文件中，如要指定数据库使用--database参数，要指定要映射的表则直接加上表名称即可，例
+# python manage.py inspectdb --database default table1 table2 >app/models.py
+# 但是同时注意如果本身app/model.py已经存在，则该指令生成的model映射会覆盖掉文件中的已有内容
+# 另外上面导入时说到如果要让django能够修改表，需要将managed = False删掉。
