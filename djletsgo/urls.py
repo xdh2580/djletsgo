@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from dj import views
 from dj.dbopt import insert, get, update, delete
+from dj.mine import form
 urlpatterns = [
     path('index', views.index),
     path('test/', views.test),
@@ -25,4 +26,7 @@ urlpatterns = [
     path('dbget/', get.get),
     path('dbmod/', update.update),
     path('dbdel/', delete.delete),
+    path('form/', form.search_form),
+    path('search/', form.search),
+    path('search_post/', form.search_post)
 ]
